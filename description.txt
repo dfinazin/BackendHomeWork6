@@ -1,7 +1,9 @@
 1. npm init - Инициализация проекта (с ключом -y без уточняющих вопросов)
-2. В package.json добавить строку ' "type": "module" ' - Для использования 'import <> from <>' вместо '<> = require(<>)'
-    В таком случае переменные путей необходимо определить как 
+2. В package.json добавить строку ' "type": "module" ' - Для использования 'import <> from <>' вместо 'const <> = require(<>)'
+    В таком случае переменные путей необходимо определять как 
         import {fileURLToPath} from "url"
         const __filename = fileURLToPath(import.meta.url)
         const __dirname = path.dirname(__filename)
-
+3. В package.json добавить строку запуска приложения ' "start": "node index.js" '
+4. Установить Nodemon 'npm i nodemon -D' (Флаг -D для установки зависимостей только для разработки "devDependencies") ' "dev": "nodemon index.js" '
+5. Установить Express 'npm install express --save'
