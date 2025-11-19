@@ -1,0 +1,25 @@
+{
+  "name": "appointment-app",
+  "version": "1.0.0",
+  "description": "application for make doctor's appointment",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dfinazin/BackendHomeWork6.git"
+  },
+  "keywords": [
+    "node.js",
+    "JavaScript",
+    "express"
+  ],
+  "author": "Finazhin Dmitry <dfinazh@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dfinazin/BackendHomeWork6/issues"
+  },
+  "homepage": "https://github.com/dfinazin/BackendHomeWork6#readme"
+}
