@@ -7,3 +7,5 @@
 3. В package.json добавить строку запуска приложения ' "start": "node index.js" '
 4. Установить Nodemon 'npm i nodemon -D' (Флаг -D для установки зависимостей только для разработки "devDependencies") ' "dev": "nodemon index.js" '
 5. Установить Express 'npm install express --save'
+6. Установить EJS 'npm i ejs'
+7. Подключить базовую страницу
