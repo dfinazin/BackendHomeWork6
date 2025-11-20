@@ -9,3 +9,7 @@
 5. Установить Express 'npm install express --save'
 6. Установить EJS 'npm i ejs'
 7. Подключить базовую страницу
+8. Установить mongoose 'npm i mongoose'
+9. Установить dotenv 'npm i dotenv'
+10. Подключить MongoDB
+11. Внесение "записей к врачу" в БД
