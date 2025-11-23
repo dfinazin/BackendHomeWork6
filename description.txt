@@ -7,8 +7,13 @@
 3. В package.json добавить строку запуска приложения ' "start": "node index.js" '
 4. Установить Nodemon 'npm i nodemon -D' (Флаг -D для установки зависимостей только для разработки "devDependencies") ' "dev": "nodemon index.js" '
 5. Установить Express 'npm install express --save'
+    app.use(express.json());                           парсинг данных получаемых сервером в формате json
+    app.use(express.urlencoded({ extended: true }));   парсинг данных получаемых сервером в формате HTML 
 6. Установить EJS 'npm i ejs'
+    app.set("view engine", "ejs");                     "Подключение" ejs к проекту
+    app.set("views", "pages");                         Указание папки со страницами ejs
 7. Подключить базовую страницу
+    res.render("index");
 8. Установить mongoose 'npm i mongoose'
 9. Установить dotenv 'npm i dotenv'
 10. Подключить MongoDB
