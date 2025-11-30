@@ -8,12 +8,29 @@
   <body>
     <form action="/" method="post">
       <h1>Запись к врачу</h1>
-      <label>ФИО<input type="text" name="fullName" /></label>
-      <label>Номер телефона<input type="text" name="phone" /></label>
       <label
-        >Опишите вышу проблему<input type="text" name="description"
+        >ФИО<input
+          type="text"
+          name="fullName"
+          placeholder="Иванов Иван Иванович"
+      /></label>
+      <label
+        >Номер телефона<input
+          type="text"
+          name="phone"
+          placeholder="88005553535"
+      /></label>
+      <label
+        >Опишите вышу проблему<input
+          type="text"
+          name="description"
+          placeholder="Описание проблемы..."
       /></label>
       <button type="submit">Отправить</button>
+      <div>
+        <% if (created) { %> Запись успешно передана на сервер <% } else { %>
+        <%= error %> <% } %>
+      </div>
     </form>
   </body>
 </html>
