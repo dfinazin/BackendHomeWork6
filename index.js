@@ -15,7 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    created: false,
+    error: null,
+  });
 });
 
 app.post("/", async (req, res) => {
@@ -27,11 +30,11 @@ app.post("/", async (req, res) => {
       error: null,
     });
   } catch (error) {
-    console.log(error);
     res.render("index", {
       created: false,
       error: `Ошибка сохранения записи к врачу: ${error.message}`,
     });
+    console.log(error.message);
   }
 });
 
