@@ -19,3 +19,5 @@
 10. Подключить MongoDB
 11. Внесение "записей к врачу" в БД
 12. Настройка моделей: добавление валидации ('npm i validator')
+13. Регистрация: Контроллеры (register,login,logout,delete,edit)
+14. Установить bcrypt и jsonwebtoken 'npm i bcrypt' 'npm i jsonwebtoken'
