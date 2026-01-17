@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import validator from "validator";
-import * as roles from "../constants/roles.js";
+import * as ROLES from "../constants/roles.js";
 import bcrypt from "bcrypt";
 
 const userSchema = mongoose.Schema(
@@ -39,9 +39,9 @@ const userSchema = mongoose.Schema(
       ],
     },
     role: {
-      type: String,
-      enum: Object.values(roles),
-      default: roles.OPERATOR,
+      type: Number,
+      enum: Object.values(ROLES),
+      default: ROLES.OPERATOR,
     },
   },
   { timestamps: true }

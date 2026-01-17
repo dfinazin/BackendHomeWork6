@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход оператора</title>
+  </head>
+  <body>
+    <form action="/login" method="post">
+      <h1>Вход в систему заявок</h1>
+      <label
+        >e-mail<input type="email" name="email" placeholder="example@mail.ru"
+      /></label>
+      <label>Пароль<input type="password" name="password" /></label>
+      <button type="submit">Отправить</button>
+      <div>
+        <% if (created) { %> Запись успешно передана на сервер <% } else { %>
+        <%= error %> <% } %>
+      </div>
+    </form>
+  </body>
+</html>

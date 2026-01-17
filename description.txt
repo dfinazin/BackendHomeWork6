@@ -19,5 +19,9 @@
 10. Подключить MongoDB
 11. Внесение "записей к врачу" в БД
 12. Настройка моделей: добавление валидации ('npm i validator')
-13. Регистрация: Контроллеры (register,login,logout,delete,edit)
-14. Установить bcrypt и jsonwebtoken 'npm i bcrypt' 'npm i jsonwebtoken'
+13. Регистрация: Контроллеры (register,login,logout (без контроллера),delete,edit)
+14. Установить bcrypt, jsonwebtoken и 'npm i bcrypt' 'npm i jsonwebtoken' 'npm i cookie-parser'
+15. создать мапер для сокращения передаваевых данных объектов/сущностей(user)
+16. Создать соответствующие страницы(наброски)
+17. Создать модуль token.js для создания и проверки токена 
+18. Создать middlewares/authenticated.js и has-role.js для проверки пользователя и роли по токену (закрытые страницы после app.use(authenticated))
