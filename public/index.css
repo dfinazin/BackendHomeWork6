@@ -1,0 +1,104 @@
+form {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+h1 {
+  text-align: center;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 2px solid #000;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+label {
+  margin: 5px 0;
+}
+.description-input {
+  box-sizing: border-box;
+  white-space: normal;
+  overflow: auto;
+  resize: none;
+  width: 100%;
+}
+
+button {
+  width: 150px;
+  height: 35px;
+  align-self: center;
+  margin-top: 10px;
+}
+
+.error-container {
+  margin-top: 10px;
+  color: red;
+}
+.message-container {
+  margin-top: 10px;
+  color: green;
+}
+
+.list-group {
+}
+.list-group-item {
+  display: flex;
+  width: 680px;
+  margin: auto;
+}
+.request-date {
+  width: 120px;
+  border-color: #000;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  text-align: right;
+  align-content: center;
+  padding: 2px;
+}
+
+.request-fio {
+  width: 180px;
+  border-color: #000;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  text-align: left;
+  align-content: center;
+  padding: 2px;
+}
+
+.request-phone {
+  width: 100px;
+  border-color: #000;
+  border-width: 0 0 1px 1px;
+  border-style: solid;
+  text-align: center;
+  align-content: center;
+  padding: 2px;
+}
+
+.request-description {
+  width: 280px;
+  border-color: #000;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  text-align: left;
+  align-content: center;
+  padding: 2px;
+}
+.header {
+  text-align: center;
+  height: 40px;
+  border-top: 1px solid #000;
+}

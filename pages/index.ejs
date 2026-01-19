@@ -3,34 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
     <title>Запись к врачу</title>
   </head>
   <body>
     <form action="/" method="post">
       <h1>Запись к врачу</h1>
-      <label
-        >ФИО<input
-          type="text"
-          name="fullName"
-          placeholder="Иванов Иван Иванович"
-      /></label>
-      <label
-        >Номер телефона<input
-          type="text"
-          name="phone"
-          placeholder="88005553535"
-      /></label>
-      <label
-        >Опишите вышу проблему<input
-          type="text"
-          name="description"
-          placeholder="Описание проблемы..."
-      /></label>
-      <button type="submit">Отправить</button>
-      <div>
-        <% if (created) { %> Запись успешно передана на сервер <% } else { %>
-        <%= error %> <% } %>
+      <div class="data-container">
+        <label
+          >ФИО<input
+            type="text"
+            name="fullName"
+            placeholder="Иванов Иван Иванович"
+        /></label>
+        <label
+          >Номер телефона<input
+            type="text"
+            name="phone"
+            placeholder="88005553535"
+        /></label>
+        <label
+          >Опишите вашу проблему<textarea
+            class="description-input"
+            type="text"
+            name="description"
+            placeholder="Описание проблемы..."
+            rows="5"
+          ></textarea>
+        </label>
+        <button type="submit">Отправить</button>
       </div>
+      <% if (created) { %>
+      <div class="message-container">Запись успешно передана на сервер</div>
+      <% } else { %>
+      <div class="error-container"><%= error %></div>
+      <% } %>
     </form>
   </body>
 </html>

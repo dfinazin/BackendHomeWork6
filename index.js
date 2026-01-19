@@ -20,6 +20,7 @@ app.set("views", "pages");
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
 
 app.get("/", (req, res) => {
   res.render("index", {
@@ -114,6 +115,7 @@ app.get("/notes", async (req, res) => {
     res.render("notes", {
       created: false,
       error: null,
+      notes: notes,
     });
   } catch (error) {
     res.render("notes", {

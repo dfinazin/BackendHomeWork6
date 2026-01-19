@@ -3,21 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/index.css" />
     <title>Заявки с формы</title>
   </head>
   <body>
-    <form action="/login" method="post">
-      <h1>Заявки с формы</h1>
-      <label
-        >e-mail<input type="email" name="email" placeholder="example@mail.ru"
-      /></label>
-      <label>Пароль<input type="password" name="password" /></label>
-      <button type="submit">Отправить</button>
-      <div>
-        <!--
-        <% if (created) { %> Запись успешно передана на сервер <% } else { %>
-        <%= error %> <% } %>
-      --></div>
-    </form>
+    <h1>Заявки с формы</h1>
+    <div class="requests-conteiner">
+      <% if (!error && notes) { %>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <div class="request-date header">Дата отправки</div>
+          <div class="request-fio header">ФИО</div>
+          <div class="request-phone header">Телефон</div>
+          <div class="request-description header">Проблема</div>
+        </li>
+        <% for (const note of notes) { %>
+        <li class="list-group-item">
+          <div class="request-date">
+            <%= note.createdAt.toLocaleDateString('ru-RU') %>
+          </div>
+          <div class="request-fio"><%= note["full_name"] %></div>
+          <div class="request-phone"><%= note.phone %></div>
+          <div class="request-description"><%= note.description %></div>
+        </li>
+        <% } %> <% } %>
+      </ul>
+    </div>
   </body>
 </html>
