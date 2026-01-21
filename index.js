@@ -110,12 +110,41 @@ app.post("/adduser", async (req, res) => {
 
 app.get("/notes", async (req, res) => {
   try {
-    const notes = await getNotes();
-    console.log(notes);
+    const data = await getNotes(
+      req.query.search,
+      req.query.limit,
+      req.query.page,
+    );
+    console.log("getNotes", data.notes);
     res.render("notes", {
       created: false,
       error: null,
-      notes: notes,
+      notes: data.notes,
+      lastPage: data.lastPage,
+      currentPage: req.query.page || 1,
+      search: req.query.search || "",
+    });
+  } catch (error) {
+    res.render("notes", {
+      created: false,
+      error: `Ошибка получения записей: ${error.message}`,
+    });
+  }
+});
+
+app.post("/notes", async (req, res) => {
+  //console.log("bodyPage: ", req.body.page);
+  console.log("queryPage: ", req.body);
+  try {
+    const data = await getNotes(req.body.search, req.body.limit, req.body.page);
+    console.log("getNotes", data.notes);
+    res.render("notes", {
+      created: false,
+      error: null,
+      notes: data.notes,
+      lastPage: data.lastPage,
+      currentPage: req.body.page || 1,
+      search: req.body.search || "",
     });
   } catch (error) {
     res.render("notes", {

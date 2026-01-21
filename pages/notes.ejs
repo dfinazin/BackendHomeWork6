@@ -9,7 +9,11 @@
   <body>
     <h1>Заявки с формы</h1>
     <div class="requests-conteiner">
-      <% if (!error && notes) { %>
+      <% if (!error && notes.length > 0) { %>
+        <div class="search-container">
+          <input class="search-input" id="search-input" type="text" value=<%= search %>>
+          <button class="search-btn" data-type="search">Найти</button>
+        </div>
       <ul class="list-group">
         <li class="list-group-item">
           <div class="request-date header">Дата отправки</div>
@@ -26,8 +30,21 @@
           <div class="request-phone"><%= note.phone %></div>
           <div class="request-description"><%= note.description %></div>
         </li>
-        <% } %> <% } %>
+        <% } %> 
       </ul>
+          <% if (lastPage > 1) { %> 
+                       <div class="pagination" id="page-container">
+                        <button class="page-btn" data-type="first" <% if (currentPage < 2) { %> disabled <% } %>  >В начало</button>
+                        <button class="page-btn" data-type="previous" <% if (currentPage < 2) { %> disabled <% } %> >Предыдущая</button>
+                        <div class="current-page" data-type="current">Страница: <%= currentPage %></div>
+                        <button class="page-btn" data-type="next" <% if (currentPage >= lastPage) { %> disabled <% } %> >Следующая</button>
+                        <button class="page-btn" data-type="last" data-last="<%= lastPage%>" <% if (currentPage >= lastPage) { %> disabled <% } %> >Последняя</button>
+                       </div>
+            <% } %> 
+        <% } else { %>
+      <div class="error-container"><%= error || "Данные для отображения отсутствуют" %></div>
+      <% } %>
     </div>
+    <script src="/index.js"></script>
   </body>
 </html>
